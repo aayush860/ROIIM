@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Checkout plus - One Step Checkout</title>
+        <!-- Required meta tags always come first -->
+        <meta charset="UTF-8">
+        
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="{% static 'cart_checkout/dist/font-awesome/css/font-awesome.min.css' %}" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'cart_checkout/css/main.min.css' %}">
+        
+    </head>
+
+    <body>
+        <div class="loader"></div>
+            <main id="main" role="main">
+            <section id="checkout-container">
+                <div class="container">
+                    <div class="row py-5">
+                        <div class="col-md-4 order-md-2 mb-4">
+                            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-muted">Your cart</span>
+                                <span class="badge badge-secondary badge-pill">3</span>
+                            </h4>
+                            <ul class="list-group mb-3">
+                                <li class="list-group-item d-flex justify-content-between bg-light">
+                                    <div class="text-success">
+                                        <h6 class="my-0">Promo code</h6>
+                                        <small>EXAMPLECODE</small>
+                                    </div>
+                                    <span class="text-success">-$5</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Total (USD)</span>
+                                    <strong>${{amount}}</strong>
+                                </li>
+                            </ul>
+                            <form class="card p-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Promo code">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-secondary">Redeem</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            
+                        </div>
+                        <div class="col-md-8 order-md-1">
+                            <h4 class="mb-3">Customer Details:</h4>
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName">First name</label>
+                                        <input type="text" class="form-control" id="firstName" value="{{user_det.first_name}}" required>
+                                        <div class="invalid-feedback">
+                                            Valid first name is required.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName">Last name</label>
+                                        <input type="text" class="form-control" id="lastName" value="{{user_det.last_name}}" required>
+                                        <div class="invalid-feedback">
+                                            Valid last name is required.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email">Email
+                                        <span class="text-muted"></span>
+                                    </label>
+                                    <input type="email" class="form-control" id="email" value="{{user_det.email}}" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone">Mobile
+                                        <span class="text-muted"></span>
+                                    </label>
+                                    <input type="phone" class="form-control" id="phone" value="{{user_det.phone}}" required>
+                                    <div class="invalid-feedback">
+                                        Mobile Number
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone">Date of Birth
+                                        <span class="text-muted"></span>
+                                    </label>
+                                    <input type="phone" class="form-control" id="DOB" value="{{user_det.dob}}" required>
+                                    <div class="invalid-feedback">
+                                        Date of Birth
+                                    </div>
+                                </div>
+
+
+                                <br><br><h1>Billing Details: </h1><br><br>
+                                <div class="mb-3">
+                                    <label for="address">Address Street 1</label>
+                                    <input type="text" class="form-control" id="address" value="{{billing_det.street}}" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your shipping address.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="address2">Address Street 2
+                                        <span class="text-muted"></span>
+                                    </label>
+                                    <input type="text" class="form-control" id="address2" value="{{billing_det.street2}}" required>
+                                </div>
+
+                                
+                                <div class="mb-3">
+                                    <label for="address2">City
+                                        <span class="text-muted"></span>
+                                    </label>
+                                    <input type="text" class="form-control" id="city" value="{{billing_det.city}}" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="zipcode">Zip Code
+                                        <span class="text-muted"></span>
+                                    </label>
+                                    <input type="text" class="form-control" id="zipcode" value="{{billing_det.zip_code}}" required>
+                                </div>
+
+                                <div class="mb-3">
+                                        <label for="country">Country
+                                        <span class="text-muted"></span>
+                                    </label>
+                                    <input type="text" class="form-control" id="country" value="{{billing_det.country}}" required>
+                                </div>
+
+                                <div class="mb-3">
+                                        <label for="state">State
+                                        <span class="text-muted"></span>
+                                    </label>
+                                    <input type="text" class="form-control" id="state" value="{{billing_det.state}}" required>
+                                </div>
+                                
+                                </div><br><br>
+ 
+                                
+                                <hr class="mb-4">
+                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                <a href="#" class="btn btn-primary scrollUp">
+                <i class="fa fa-arrow-circle-o-up"></i>
+            </a>
+        </main>
+
+        
+                <button class="btn btn-primary btn-lg btn-block" onclick="checkout()"> <i class="fa fa-credit-card"></i> Continue to checkout </button>
+                <script src="https://hosted.paysafe.com/checkout/v2/paysafe.checkout.min.js"></script>
+                <script type="text/javascript" charset="utf-8">
+                        var amount={{amount}}*100;
+                        var id=document.createElement("id");
+                        id.type = "hidden";
+                        id.value = "{{ config.api_key }}";
+                        id.name = "a";
+                        function checkout() {
+                            paysafe.checkout.setup(id, {
+                                "currency": "USD",
+                                "amount": amount,
+                                "locale": "en_US",
+                                "customer": {
+                                    "firstName": "{{user_det.first_name}}",
+                                    "lastName": "{{user_det.last_name}}",
+                                    "email": "{{user_det.email}}",
+                                    "phone": "{{user_det.phone}}",
+                                    "dateOfBirth": {
+                                        "day": 1,
+                                        "month": 7,
+                                        "year": 1990
+                                    },
+                
+                                },
+                                "billingAddress": {
+                                    "nickName": "{{billing_det.nick_name}}",
+                                    "street": "{{billing_det.street}}",
+                                    "street2": "{{billing_det.street2}}",
+                                    "city": "{{billing_det.city}}",
+                                    "zip": "85001",
+                                    "country": "US",
+                                    "state": "CA"
+                                },
+                
+                
+                                "environment": "TEST",
+                                "merchantRefNum": "1559900597607",
+                                "canEditAmount": false,
+                                "merchantDescriptor": {   
+                                    "dynamicDescriptor": "XYZ",
+                                    "phone": "1234567890"
+                                    },
+                                "displayPaymentMethods":["card"],
+                                "paymentMethodDetails": {
+                                    "paysafecard": {
+                                        "consumerId": "1232323"
+                                    },
+                                    "paysafecash": {
+                                        "consumerId": "123456"
+                                    },
+                                }
+                            }, function(instance, error, result) {
+                                if (result && result.paymentHandleToken) {
+                                    console.log(result.paymentHandleToken);
+                                    
+                                    //window.open("https://www.w3schools.com","_self");
+                                    // make AJAX call to Payments API
+                                } else {
+                                    console.error(error);
+                                    alert(22)
+                                    // Handle the error
+                                }
+                            }, function(stage, expired) {
+                                switch(stage) {
+                                    case "PAYMENT_HANDLE_NOT_CREATED": // Handle the scenario
+                                    case "PAYMENT_HANDLE_CREATED": // Handle the scenario
+                                    case "PAYMENT_HANDLE_REDIRECT": // Handle the scenario
+                                    case "PAYMENT_HANDLE_PAYABLE": // Handle the scenario
+                                    default: // Handle the scenario
+                                }
+                            });
+                        }
+                </script>
+            
+        <!-- jQuery first, then Bootstrap JS. -->
+        <script src="{% static 'cart_checkout/dist/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'cart_checkout/dist/popper/popper.min.js' %}" integrity=""></script>
+        <script src="{% static 'cart_checkout/dist/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'cart_checkout/js/main.min.js' %}"></script>
+    </body>
+
+</html>
