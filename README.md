@@ -15,21 +15,18 @@ having 2 microservices-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Available urls-
--> signin-  to signin.
--> signup- to singup.
--> window- to add items in cart.
--> checkout-  handeling billing and payment functionalities.
--> payment_sucessuful- redirection on sucessful payment.
--> payment_unsucessuful- redirection on unsucessful payment.
+1. signin-  to signin.
+2. signup- to singup.
+3. window- to add items in cart.
+4. checkout-  handeling billing and payment functionalities.
+5. payment_sucessuful- redirection on sucessful payment.
+6. payment_unsucessuful- redirection on unsucessful payment.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 Database-
 OnetoOne architecture is used to map user- 
-                                    user(login functionality)
-                                     /\
-                                    /  \
-                                   /    \
-                                  /      \
-        details_of_user_doing payment    billing_details_of_user_doing payment
+-user(login functionality)
+1. details_of_user_doing payment
+2. billing_details_of_user_doing payment
         
 NOTE-> There is one more table handeling api_key configuration in postgres database 
