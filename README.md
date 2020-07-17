@@ -3,7 +3,7 @@ paysafe
 
 NOTE - (Frontend /checkout link may take time to load as i have little experience with frontend)
 
-This application is using Django as backend- (debug is on purpose kept true on deployment)
+This application is using Django as backend-
 with architecture
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
