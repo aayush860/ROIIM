@@ -15,12 +15,12 @@ having 2 microservices-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Available urls-
--> signin-  to signin
--> signup- to singup
--> window- to add items in cart
--> checkout-  handeling billing and payment functionalities
--> payment_sucessuful- redirection on sucessful payment
--> payment_unsucessuful- redirection on unsucessful payment
+-> signin-  to signin.
+-> signup- to singup.
+-> window- to add items in cart.
+-> checkout-  handeling billing and payment functionalities.
+-> payment_sucessuful- redirection on sucessful payment.
+-> payment_unsucessuful- redirection on unsucessful payment.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 Database-
